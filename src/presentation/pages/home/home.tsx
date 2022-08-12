@@ -1,13 +1,18 @@
-import React from "react"
-import { SearchBar, FilterBar, Nav, Product } from '@/presentation/pages/home/components'
+import { SearchBar, FilterAside, ProductsContainer, FilterHeader } from '@/presentation/pages/home/components'
+import { Nav } from "@/presentation/components"
 import './home-styles.scss'
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Nav />
       <SearchBar />
-      <FilterBar />
+      <FilterHeader />
+      <section className='products-filter-container container'>
+        <FilterAside />
+        <ProductsContainer />
+      </section>
+
     </>
   )
 }

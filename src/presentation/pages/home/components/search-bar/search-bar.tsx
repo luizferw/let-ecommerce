@@ -1,6 +1,8 @@
-const SearchBar = () => {
+import './search-bar-styles.scss'
+
+const SearchBar: React.FC = () => {
   return (
-    <section className='search-bar'>
+    <section className='search-bar container'>
       <div>
         <input type="text" maxLength={100}></input>
         <span className="material-symbols-outlined">

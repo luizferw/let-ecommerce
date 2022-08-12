@@ -38,26 +38,7 @@ input[type="text"] {
   outline: none;
 }
 
-button {
-  background-color: $primary;
-  line-height: 5rem;
-  color: $white;
-  border-radius: .8rem;
-  font-size: $font-normal;
-  border: none;
-  padding: 0 1.6rem;
-  outline: none;
-
-  &:hover {
-    opacity: 0.9;
-  }
-  
-  &:disabled {
-    background-color: $disabledBackground;
-    color: $disabledColor;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
+.container {
+  width: $container;
+  margin-inline: auto;
 }

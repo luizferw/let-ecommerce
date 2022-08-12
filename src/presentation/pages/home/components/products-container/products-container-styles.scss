@@ -1,0 +1,16 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/consts.scss';
+
+div.products-container {
+
+  h3 {
+    padding-block: 1.2rem;
+  }
+
+  .grid-container {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 3rem;
+  }
+}

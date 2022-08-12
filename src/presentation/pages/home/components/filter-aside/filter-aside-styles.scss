@@ -1,0 +1,22 @@
+@import '../../../../styles/consts.scss';
+@import '../../../../styles/colors.scss';
+
+aside.filter-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 1.2rem;
+
+  height: fit-content;
+
+  background-color: $white;
+  box-shadow: 0 4px 15px lightgrey;
+  border-radius: .5rem;
+
+
+  h3 {
+    font-size: $font-large;
+  }
+}
+

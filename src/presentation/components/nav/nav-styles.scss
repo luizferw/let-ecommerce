@@ -1,0 +1,30 @@
+@import '../../styles/colors.scss';
+@import '../../styles/consts.scss';
+
+header.nav {
+  padding: 1.2rem;
+  background-color: $primary;
+  
+  nav {
+    width: $container;
+    margin-inline: auto;
+    
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      li, li a{
+        padding: 1rem;
+        
+        font-size: $font-large;
+        color: $white;
+        font-weight: 700;
+        
+        .material-symbols-outlined {
+          font-size: $font-xlarge;
+        }
+      }
+    }
+  }
+}

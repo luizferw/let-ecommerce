@@ -1,3 +1,5 @@
+import './filter-option-styles.scss'
+
 type Options = {
   title: String,
   options: String[]

@@ -1,0 +1,10 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/consts.scss';
+
+.filter-option {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+
+}

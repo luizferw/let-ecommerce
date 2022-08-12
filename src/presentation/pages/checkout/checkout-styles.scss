@@ -1,0 +1,17 @@
+@import '../../styles/consts.scss';
+
+header.checkout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-block: 5rem;
+
+  span {
+    font-size: $font-xlarge;
+  }
+  
+  h1 {
+    font-size: $font-mlarge;
+  }
+}

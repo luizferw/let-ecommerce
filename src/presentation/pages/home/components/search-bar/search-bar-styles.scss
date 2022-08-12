@@ -1,0 +1,35 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/consts.scss';
+
+section.search-bar {
+  padding: 6rem 6rem 3rem;
+  
+  display: flex;
+
+  div {
+    width: 100rem;
+    margin-inline: auto;
+    
+    display: flex;
+    align-items: center;
+
+    padding: 1rem 1.5rem;
+
+    border-radius: .3rem;
+    border: 1px solid $primary;
+
+    input[type="text"] {
+      width: 100%;
+      background-color: $background;
+    }
+
+    span {
+      color: $primaryDark;
+
+      &:hover {
+        cursor: pointer;
+        color: $primaryLight;
+      }
+    }
+  }
+}
