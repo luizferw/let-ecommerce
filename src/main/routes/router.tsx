@@ -1,11 +1,11 @@
+import Home from "@/presentation/pages/home/home"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { makeHome } from "@/main/factories/pages/home-factory"
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ makeHome() } />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   )
