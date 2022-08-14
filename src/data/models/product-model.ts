@@ -1,6 +1,7 @@
 export type ProductType = {
   id: Number
   title: String
-  price: String
+  price: number
+  amount: number
   post_date: Date
 }

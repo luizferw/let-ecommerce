@@ -15,3 +15,23 @@ header.checkout {
     font-size: $font-mlarge;
   }
 }
+
+.table-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-column-gap: 2rem;
+
+  .table {
+    height: fit-content;
+    padding: 2rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0 4px 15px lightgray;
+
+    .table__items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

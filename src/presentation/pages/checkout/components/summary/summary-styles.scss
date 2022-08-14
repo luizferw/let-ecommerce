@@ -4,6 +4,8 @@
 .summary {
   padding: 2rem;
 
+  max-height: 33rem;
+
   border-radius: .5rem;
   box-shadow: 0 4px 15px lightgray;
   background-color: $white;
@@ -53,6 +55,13 @@
 
           .item__title  {
             font-weight: $normal;
+          }
+
+          &.add {
+            color: green;
+          }
+          &.subtract {
+            color: red;
           }
         }
       }

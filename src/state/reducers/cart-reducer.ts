@@ -1,6 +1,6 @@
 import { ProductType } from "@/data/models";
-import { ADD_TO_CART } from "../actions-types";
-import { CartReducerType } from "../reducers-types";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "@/state/actions-types";
+import { CartReducerType } from "@/state/reducers-types";
 
 interface CartState {
   products: ProductType[]
@@ -18,10 +18,15 @@ export const cartReducer = (state: CartState = initialState, action: CartReducer
 
       for (let i = 0; i < state.products.length; i++) {
         for (let j = 0; j < state.products.length; j++) {
-          if (state.products[j].id === action.payload.id) { return {...state} }
+          if (state.products[j].id === action.payload.id) return state
         }
-        return { ...state, products: [...state.products, action.payload] }
+        return {...state, products: [...state.products, action.payload]}
       }
-    } default : return {...state}
+    } case REMOVE_FROM_CART : {
+      if(!state.products.length) return state
+
+      return {...state, products: state.products.filter(product => product !== action.payload)}
+      
+    } default : return state
   }
 }

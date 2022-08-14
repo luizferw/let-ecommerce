@@ -1,6 +1,6 @@
-import { ProductType, State } from '@/data/models'
+import { ProductType } from '@/data/models'
 import { cartActionCreator } from '@/state/action-creators'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import './product-home-styles.scss'
 
@@ -8,7 +8,7 @@ type Props = {
   product: ProductType
 }
 
-const Product = (props: Props) => {
+const Product: React.FC<Props> = (props: Props) => {
   const dispatch = useDispatch()
   const { addToCart } = bindActionCreators(cartActionCreator, dispatch)
 

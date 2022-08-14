@@ -16,8 +16,8 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     let array: ProductType[] = []
-    if (sortBy.lowest) { array = (filteredProducts.slice().sort((a, b) => Number(a.price) - Number(b.price))) }
-    if (sortBy.highest) { array = (filteredProducts.slice().sort((a, b) => Number(b.price) - Number(a.price))) }
+    if (sortBy.lowest) { array = (filteredProducts.slice().sort((a, b) => a.price - b.price)) }
+    if (sortBy.highest) { array = (filteredProducts.slice().sort((a, b) => b.price - a.price)) }
     if (sortBy.latest) { array = (filteredProducts.slice().sort((a, b) => b.post_date.getTime() - a.post_date.getTime())) }
     if (sortBy.older) { array = (filteredProducts.slice().sort((a, b) => a.post_date.getTime() - b.post_date.getTime() )) }
 
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
     const array: ProductType[] = []
 
     for (let i = 0; i < products.length; i++) {
-      const conditionPrice = Number(products[i].price) >= Number(filterPrice.firstPrice) && Number(products[i].price) <= Number(filterPrice.secondPrice)
+      const conditionPrice = products[i].price >= Number(filterPrice.firstPrice) && products[i].price <= Number(filterPrice.secondPrice)
 
       if (conditionPrice) {
         array.push(products[i])
