@@ -24,6 +24,13 @@ header.nav {
         .material-symbols-outlined {
           font-size: $font-xlarge;
         }
+
+        .cart-length {
+          background: $white;
+          color: $primaryDark;
+          padding: 0.3rem 0.7rem;
+          border-radius: 100%;
+        }
       }
     }
   }

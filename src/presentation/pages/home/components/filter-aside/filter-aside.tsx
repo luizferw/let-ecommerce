@@ -1,12 +1,36 @@
-import FilterOption from '../filter-option/filter-option'
+import { FilterOptionPrice, FilterOptionInclusion } from '@/presentation/pages/home/components'
 import './filter-aside-styles.scss'
 
-const FilterAside: React.FC = () => {
+type Props = {
+  filter: [
+    filterDate: {
+      firstDate: string;
+      secondDate: string;
+  },
+    setFilterDate: React.Dispatch<React.SetStateAction<{
+      firstDate: string;
+      secondDate: string;
+  }>>,
+    filterPrice: {
+      firstPrice: string;
+      secondPrice: string;
+  },
+    setFilterPrice: React.Dispatch<React.SetStateAction<{
+      firstPrice: string;
+      secondPrice: string;
+  }>>
+  ]
+}
+
+const FilterAside: React.FC<Props> = ({ filter }: Props) => {
+  const [filterDate, setFilterDate, filterPrice, setFilterPrice] = filter
+
   return (
     <aside className='filter-aside'>
       <h3>Filter</h3>
       <nav>
-        <FilterOption options={[{title: 'name', options: ['option 1', 'option 2']}, {title: 'name', options: ['option 1', 'option 2']}]} />
+        <FilterOptionPrice price={[filterPrice, setFilterPrice]}/>
+        <FilterOptionInclusion date={[filterDate, setFilterDate]} />
       </nav>
     </aside>
   )

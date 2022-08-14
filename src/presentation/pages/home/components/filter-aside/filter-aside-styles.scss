@@ -14,9 +14,14 @@ aside.filter-aside {
   box-shadow: 0 4px 15px lightgrey;
   border-radius: .5rem;
 
-
   h3 {
     font-size: $font-large;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
