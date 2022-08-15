@@ -13,6 +13,8 @@ const Product: React.FC<Props> = ({product}: Props) => {
   const dispatch = useDispatch()
   const { addToCart } = bindActionCreators(cartActionCreator, dispatch)
   const { updateProduct } = bindActionCreators(productActionCreator, dispatch)
+  const date = new Date(product.post_date).toISOString().split('T')[0].split('-')
+  const parsedDate = (`${date[2]}/${date[1]}/${date[0]}`)
 
 
   const handleAddToCart = () => {
@@ -34,6 +36,7 @@ const Product: React.FC<Props> = ({product}: Props) => {
           <span>Inventory: {' '}</span>
           <span>{ product.inventory > 0 ? `${product.inventory} units`  : 'out of stock' }</span>
         </span>
+        <span>{parsedDate}</span>
       </div>
       <div className='add-product'>
         <span className="material-symbols-outlined">shopping_cart</span>

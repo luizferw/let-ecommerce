@@ -22,7 +22,7 @@ const initialState = {
       title: 'Smartphone Xiaomi',
       price: 1299.10,
       amount: 0,
-      post_date: new Date('2022-08-15'),
+      post_date: new Date('2022-08-25'),
       imageName: 'smartphone-xiaomi.jpg',
       inventory: 5
     },
