@@ -1,32 +1,19 @@
-import { useState } from 'react';
+import { productActionCreator } from '@/state/actions'
+import { useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import './filter-header-styles.scss'
 
-type Props = {
-  sort: [
-    sortBy: {
-      lowest: boolean;
-      highest: boolean;
-      latest: boolean;
-      older: boolean;
-    }, 
-    setSortBy: React.Dispatch<React.SetStateAction<{
-      lowest: boolean;
-      highest: boolean;
-      latest: boolean;
-      older: boolean;
-    }>>
-  ]
-}
 
-const FilterBar: React.FC<Props> = ({ sort } : Props) => {
-  const [sortBy, setSortBy] = sort
+const FilterBar: React.FC = () => {
+  const dispatch = useDispatch()
+  const { sortProducts } = bindActionCreators(productActionCreator, dispatch)
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     switch(e.target.value) {
-      case 'lowest': {setSortBy({lowest: true, highest: false, latest: false, older: false}); return}
-      case 'highest': {setSortBy({lowest: false, highest: true, latest: false, older: false}); return}
-      case 'latest': {setSortBy({lowest: false, highest: false, latest: true, older: false}); return}
-      case 'older': {setSortBy({lowest: false, highest: false, latest: false, older: true}); return}
+      case 'lowest': { sortProducts({sortBy: 'LOWEST'}); return }
+      case 'highest': { sortProducts({sortBy: 'HIGHEST'}); return }
+      case 'latest': { sortProducts({sortBy: 'LATEST'}); return }
+      case 'older': { sortProducts({sortBy: 'OLDER'}); return }
     }
   }
 
@@ -36,7 +23,8 @@ const FilterBar: React.FC<Props> = ({ sort } : Props) => {
         <h2>{'Search'}</h2>
         <div>
           <span>Sort by {' '}</span>
-          <select onChange={(e) => handleChange(e)}>
+          <select defaultValue="default" onChange={(e) => handleChange(e)}>
+            <option value="default"></option>
             <option value='lowest'>Lowest price</option>
             <option value='highest'>Highest price</option>
             <option value='latest'>Latest</option>

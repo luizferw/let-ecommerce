@@ -18,20 +18,31 @@ header.checkout {
 
 .table-container {
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-column-gap: 2rem;
-
+  
   .table {
     height: fit-content;
     padding: 2rem;
     background-color: white;
     border-radius: .5rem;
     box-shadow: 0 4px 15px lightgray;
-
+    
     .table__items {
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
+  }
+  
+  @media(max-width: 1300px) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  
+  @media(max-width: 1060px) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 }

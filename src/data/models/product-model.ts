@@ -3,5 +3,6 @@ export type ProductType = {
   title: String
   price: number
   amount: number
-  post_date: Date
+  post_date: Date,
+  imageName: String
 }

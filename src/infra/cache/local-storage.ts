@@ -1,6 +1,6 @@
 import { State } from "@/data/models";
 
-export const loadState = () => {
+export const loadState = (): State | Array<object> => {
   const localState = localStorage.getItem('state')
 
   if (localState === null) return []

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import './checkout-styles.scss'
 
-const Checkout = () => {
+const Checkout: React.FC = () => {
   const { products } = useSelector((state: State) => state.cart)
   const [loading, setLoading] = useState(false)
 
@@ -30,7 +30,7 @@ const Checkout = () => {
               )}
             </div>
             </div>
-            <Summary products={products} loading={[loading]}/>
+            <Summary products={products} />
           </div>
       </div>
     </>

@@ -29,4 +29,11 @@ section.filter-header {
       cursor: pointer;
     }
   }
+
+  @media(max-width: 455px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
 }

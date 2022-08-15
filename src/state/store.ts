@@ -2,8 +2,9 @@ import { applyMiddleware, createStore } from 'redux'
 import reducers from '@/state/reducers'
 import thunk from 'redux-thunk'
 import { loadState, saveState } from '@/infra/cache';
+import { State } from '@/data/models';
 
-const persistedState = loadState()
+const persistedState: State | object  = loadState()
 
 export const store = createStore(
   reducers,
@@ -12,7 +13,5 @@ export const store = createStore(
 );
 
 store.subscribe(() => {
-  saveState(
-    store.getState()
-  );
+  saveState(store.getState());
 });

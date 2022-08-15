@@ -1,11 +1,12 @@
 @import '../../styles/consts.scss';
+@import '../../styles/colors.scss';
 
 
-section.products-filter-container{
+section.products-filter-container {
   padding-block: 2rem;
 
   display: grid;
-  grid-template-columns: 14rem 1fr;
+  grid-template-columns: 20rem 1fr;
   gap: 3rem;
 
   div.products-container {
@@ -13,14 +14,63 @@ section.products-filter-container{
     h3 {
       padding-bottom: 1.2rem;
       font-size: $font-mlarge;
+
+      @media(max-width: 800px) {
+        text-align: center;
+      }
     }
   
     .grid-container {
       max-width: 100%;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 3rem;
+      
+      @media(max-width: 1300px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      @media(max-width: 1060px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media(max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
+  }
+
+  aside.filter-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    padding: 1.2rem;
+  
+    height: fit-content;
+  
+    background-color: $white;
+    box-shadow: 0 4px 15px lightgrey;
+    border-radius: .5rem;
+  
+    h3 {
+      font-size: $font-large;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }  
+
+  @media(max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+
+    width: 36rem;
   }
 }  
 

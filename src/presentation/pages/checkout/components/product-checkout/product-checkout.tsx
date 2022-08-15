@@ -1,6 +1,5 @@
 import { ProductType } from '@/data/models'
-import { cartActionCreator, productActionCreator } from '@/state/action-creators'
-import { useEffect, useState } from 'react'
+import { cartActionCreator, productActionCreator } from '@/state/actions'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import './product-checkout-styles.scss'
@@ -14,19 +13,18 @@ type Props = {
 }
 
 const ProductCheckout: React.FC<Props> = ({product, loading}: Props) => {
-  const [load, setLoading] = loading
   const dispatch = useDispatch()
   const { decreaseAmount, increaseAmount } = bindActionCreators(productActionCreator, dispatch)
   const { removeFromCart } = bindActionCreators(cartActionCreator, dispatch)
+  const [load, setLoading] = loading
 
   const handleDecreaseAmount = () => {
     setLoading(true)
-    if (product.amount == 1) {
-      decreaseAmount({...product})
-    } else if(product.amount > 1) {
+    if (product.amount == 1) { return } 
+    
+    if(product.amount > 1) {
       decreaseAmount({...product, amount: product.amount -= 1 })
     }
-
   }
 
   const handleIncreaseAmount = () => {
@@ -37,7 +35,7 @@ const ProductCheckout: React.FC<Props> = ({product, loading}: Props) => {
   return (
     <div className='items__item'>
       <div className='item__description'>
-        <img src='https://via.placeholder.com/150'></img>
+        <img src={`images/${product.imageName}`}></img>
         <h4>{product.title}</h4>
       </div>
       <div className='item__amount'>

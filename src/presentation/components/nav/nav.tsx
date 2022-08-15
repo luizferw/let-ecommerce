@@ -9,7 +9,7 @@ const Nav: React.FC = () => {
 
   return (
     <header className='nav'>
-      <nav>
+      <nav className='container'>
         <ul>
           <li><Link to='/'>Home</Link></li>
           <li>

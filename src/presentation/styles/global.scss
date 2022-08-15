@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   width: 100%;
   height: 100%;
 }
@@ -31,9 +31,7 @@ a {
   text-decoration: none;
 }
 
-input[type="password"],
-input[type="email"],
-input[type="text"] {
+input {
   border: none;
   outline: none;
 }
@@ -41,4 +39,22 @@ input[type="text"] {
 .container {
   width: $container;
   margin-inline: auto;
+
+  @media(max-width: 1300px) {
+    width: $container-medium;
+  }
+
+  @media(max-width: 1060px) {
+    width: $container-small;
+  }
+
+  @media(max-width: 800px) {
+    width: 40rem;
+  }
+
+  @media(max-width: 455px) {
+    width: 100%;
+    padding: 2.5rem;
+  }
+
 }

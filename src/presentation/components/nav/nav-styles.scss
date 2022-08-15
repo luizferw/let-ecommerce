@@ -6,7 +6,6 @@ header.nav {
   background-color: $primary;
   
   nav {
-    width: $container;
     margin-inline: auto;
     
     ul {
@@ -32,6 +31,12 @@ header.nav {
           border-radius: 100%;
         }
       }
+    }
+  }
+
+  @media(max-width: 455px) {
+    nav.container {
+      padding: 0;
     }
   }
 }

@@ -3,6 +3,7 @@
 
 .summary {
   padding: 2rem;
+  margin-bottom: 8rem;
 
   max-height: 33rem;
 
@@ -58,10 +59,10 @@
           }
 
           &.add {
-            color: green;
+            color: $green;
           }
           &.subtract {
-            color: red;
+            color: $orange;
           }
         }
       }

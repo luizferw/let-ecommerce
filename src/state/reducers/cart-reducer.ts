@@ -1,6 +1,6 @@
 import { ProductType } from "@/data/models";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "@/state/actions-types";
-import { CartReducerType } from "@/state/reducers-types";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "@/state/actions/types";
+import { CartReducerType } from "@/state/reducers/types";
 
 interface CartState {
   products: ProductType[]

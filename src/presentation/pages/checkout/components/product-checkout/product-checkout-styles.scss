@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: 3fr 1fr 1fr .5fr;
 
+  box-shadow: 0 4px 3px -3px lightgrey;
+
   .item__description {
     display: flex;
     align-items: center;
@@ -57,7 +59,7 @@
         cursor: pointer;
 
         path {
-          fill: $invalid;
+          fill: $orange;
         }
       }
     }
