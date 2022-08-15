@@ -1,5 +1,6 @@
 import { ProductType } from '@/data/models'
-import { cartActionCreator } from '@/state/actions'
+import { cartActionCreator, productActionCreator } from '@/state/actions'
+import { getUrl } from '@/utils/getUrl'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import './product-home-styles.scss'
@@ -11,13 +12,28 @@ type Props = {
 const Product: React.FC<Props> = ({product}: Props) => {
   const dispatch = useDispatch()
   const { addToCart } = bindActionCreators(cartActionCreator, dispatch)
+  const { updateProduct } = bindActionCreators(productActionCreator, dispatch)
+
+
+  const handleAddToCart = () => {
+    if (product.inventory === 0) return
+    updateProduct({...product, inventory: product.inventory - 1})
+    addToCart({...product})
+
+    if(product.inventory === 1 && product.amount >= product.inventory) {
+    }
+  }
 
   return (
-    <article onClick={() => addToCart(product)}>
-      <img src={`images/${product.imageName}`}></img>
+    <article onClick={() => handleAddToCart()}>
+      <img src={getUrl(product)}></img>
       <div>
         <span>{ product.title }</span>
-        <h5>R${ product.price }</h5>
+        <h5>${ Number(product.price).toFixed(2) }</h5>
+        <span>
+          <span>Inventory: {' '}</span>
+          <span>{ product.inventory > 0 ? `${product.inventory} units`  : 'out of stock' }</span>
+        </span>
       </div>
       <div className='add-product'>
         <span className="material-symbols-outlined">shopping_cart</span>

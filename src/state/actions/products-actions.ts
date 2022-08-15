@@ -1,21 +1,11 @@
 import { ProductType } from "@/data/models";
-import { DECREASE_AMOUNT, INCREASE_AMOUNT, SortActionType, SORT_PRODUCTS } from "@/state/actions/types";
+import { SortActionType, SORT_PRODUCTS, UPDATE_PRODUCT } from "@/state/actions/types";
 
-export const decreaseAmount = (product: ProductType) => {
+export const updateProduct = (product: ProductType) => {
   return (dispatch: any) => {
     dispatch(
       { 
-        type: DECREASE_AMOUNT, payload: product 
-      }
-    );
-  }
-}
-
-export const increaseAmount = (product: ProductType) => {
-  return (dispatch: any) => {
-    dispatch(
-      { 
-        type: INCREASE_AMOUNT, payload: product 
+        type: UPDATE_PRODUCT, payload: product 
       }
     );
   }

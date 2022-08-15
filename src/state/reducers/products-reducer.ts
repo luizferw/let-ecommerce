@@ -1,13 +1,13 @@
 import { ProductType } from "@/data/models";
 import { ProductReducerType } from "@/state/reducers/types";
 import { 
-  DECREASE_AMOUNT, 
   FILTER_BY_DATE, 
   FILTER_BY_PRICE, 
   FILTER_BY_SEARCH, 
-  HIGHEST, INCREASE_AMOUNT, 
+  HIGHEST,
   LATEST, LOWEST, OLDER, 
-  SORT_PRODUCTS 
+  SORT_PRODUCTS, 
+  UPDATE_PRODUCT
 } from "@/state/actions/types";
 
 interface ProductsState {
@@ -19,43 +19,66 @@ const initialState = {
   products: [
     {
       id: 1,
-      title: 'Smartphone Xioami',
-      price: 1299,
-      amount: 1,
+      title: 'Smartphone Xiaomi',
+      price: 1299.10,
+      amount: 0,
       post_date: new Date('2022-08-15'),
-      imageName: 'smartphone-xioami.jpeg'
+      imageName: 'smartphone-xiaomi.jpg',
+      inventory: 5
     },
     {
       id: 2,
       title: 'Notebook Samsung',
-      amount: 1,
-      price: 2459,
+      amount: 0,
+      price: 2459.98,
       post_date: new Date('2022-08-12'),
-      imageName: 'laptop.jpg'
+      imageName: 'laptop.jpg',
+      inventory: 63
     },
     {
       id: 4,
       title: 'Smartphone Samsung',
-      amount: 1,
-      price: 879,
+      amount: 0,
+      price: 879.20,
       post_date: new Date('2022-08-24'),
-      imageName: 'smartphone-samsung.jpg'
+      imageName: 'smartphone-samsung.jpg',
+      inventory: 21
     },
     {
       id: 3,
       title: 'Headphone Sennheiser',
-      amount: 1,
+      amount: 0,
       price: 525,
       post_date: new Date('2022-08-19'),
-      imageName: 'headphone.jpg'
+      imageName: 'headphone.jpg',
+      inventory: 15
     },
     {
       id: 5,
       title: 'Monitor Acer',
-      amount: 1,
-      price: 890,
+      amount: 0,
+      price: 890.5,
       post_date: new Date('2022-08-4'),
-      imageName: 'monitor.jpg'
+      imageName: 'monitor.jpg',
+      inventory: 10
+    },
+    {
+      id: 6,
+      title: 'Camera Canon',
+      amount: 0,
+      price: 250.9,
+      post_date: new Date('2022-08-15'),
+      imageName: 'camera.jpg',
+      inventory: 1
+    },
+    {
+      id: 7,
+      title: 'Mechanical Gaming Keyboard',
+      amount: 0,
+      price: 70,
+      post_date: new Date('2022-07-9'),
+      imageName: 'keyboard.jpg',
+      inventory: 9
     },
   ],
   filteredProducts: []
@@ -63,14 +86,7 @@ const initialState = {
 
 export const productsReducer = (state: ProductsState = initialState, action: ProductReducerType) => {
   switch (action.type) {
-    case DECREASE_AMOUNT : {
-      const objIndex = state.products.findIndex(obj => obj.id === action.payload.id);
-
-      if(state.products[objIndex].amount >= 1) return state
-      return {
-        ...state, products: [...state.products.filter(p => p.id !== action.payload.id), action.payload]
-      }
-    } case INCREASE_AMOUNT : {
+    case UPDATE_PRODUCT : {
       return {
         ...state, products: [...state.products.filter(p => p.id !== action.payload.id), action.payload]
       }

@@ -2,11 +2,12 @@
 @import '../../../../styles/consts.scss';
 
 .items__item {
-  padding: 1.5rem 0 0 0;
   display: grid;
   grid-template-columns: 3fr 1fr 1fr .5fr;
+  padding-block: 0.5rem;
+  opacity: .9;
 
-  box-shadow: 0 4px 3px -3px lightgrey;
+  box-shadow: 0 4px 3px -3px $lightgray;
 
   .item__description {
     display: flex;

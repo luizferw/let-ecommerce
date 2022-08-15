@@ -4,5 +4,6 @@ export type ProductType = {
   price: number
   amount: number
   post_date: Date,
-  imageName: String
+  imageName: String,
+  inventory: number
 }

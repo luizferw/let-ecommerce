@@ -1,14 +1,15 @@
 import { SearchBar, FilterHeader, Product, FilterOption } from '@/presentation/pages/home/components'
 import { Nav } from "@/presentation/components"
 import './home-styles.scss'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { State } from '@/data/models'
-import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { filterActionCreator } from '@/state/actions'
 
+
 const Home: React.FC = () => {
   const { filteredProducts } = useSelector((state: State) => state.products)
+  
   const dispatch = useDispatch()
   const { filterByDate, filterByPrice } = bindActionCreators(filterActionCreator, dispatch)
 
@@ -30,12 +31,15 @@ const Home: React.FC = () => {
             Products
           </h3>
           <div className='grid-container'>
-            {
-              filteredProducts.map((product, index) => (
+            { filteredProducts.length > 0 &&
+            filteredProducts.map((product, index) => (
                 <Product key={index} product={product} />
               ))
             }
           </div>
+          { filteredProducts.length === 0 && 
+            <p>There are no ads matching your search.</p>
+          }
         </div>
       </section>
     </>

@@ -4,11 +4,12 @@
 .summary {
   padding: 2rem;
   margin-bottom: 8rem;
+  opacity: .9;
 
   max-height: 33rem;
 
   border-radius: .5rem;
-  box-shadow: 0 4px 15px lightgray;
+  box-shadow: 0 4px 15px $lightgray;
   background-color: $white;
 
   display: flex;

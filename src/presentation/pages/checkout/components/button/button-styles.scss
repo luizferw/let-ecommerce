@@ -1,18 +1,21 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/consts.scss';
 
-.summary__purchaseButton {
+.button {
   padding: 1.5rem 2rem;
   color: $white;
   font-weight: $bold;
+  opacity: .8;
 
   border-radius: .5rem;
   border: none;
-  box-shadow: 0px 5px 6px lightgray;
+  box-shadow: 0px 5px 6px $lightgray;
   background-color: $primaryLight;
+
+  transition: 50ms;
 
   &:hover {
     cursor: pointer;
-    opacity: .8;
+    opacity: 1;
   }
 }

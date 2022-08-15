@@ -1,0 +1,8 @@
+export const HEADPHONE_IMAGE = 'https://i.postimg.cc/B6Md675H/headphone.jpg'
+export const SAMSUNG_IMAGE = 'https://i.postimg.cc/ryZB2bwL/smartphone-samsung.webp'
+export const XIAOMI_IMAGE = 'https://i.postimg.cc/9F4vmpDw/smartphone-xiaomi.jpg'
+export const KEYBOARD_IMAGE = 'https://i.postimg.cc/kGHzNVp5/keyboard.jpg'
+export const CAMERA_IMAGE = 'https://i.postimg.cc/RFMkvxtv/camera.jpg'
+export const LAPTOP_IMAGE = 'https://i.postimg.cc/gjj16y45/laptop.webp'
+export const MONITOR_IMAGE = 'https://i.postimg.cc/tCL8Yx6S/monitor.jpg'
+export const PLACEHOLDER_IMAGE = 'https://via.placeholder.com/350'

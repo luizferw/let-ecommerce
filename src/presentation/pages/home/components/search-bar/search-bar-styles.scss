@@ -3,6 +3,7 @@
 
 section.search-bar {
   padding: 6rem 6rem 3rem;
+  opacity: .9;
   
   display: flex;
 
@@ -16,7 +17,7 @@ section.search-bar {
     padding: 1rem 1.5rem;
 
     border-radius: .3rem;
-    border: 1px solid $primary;
+    border: 1px solid $black;
 
     input[type="text"] {
       width: 100%;
@@ -24,11 +25,9 @@ section.search-bar {
     }
 
     span {
-      color: $primaryDark;
-
       &:hover {
         cursor: pointer;
-        color: $primaryLight;
+        opacity: .5;
       }
     }
   }

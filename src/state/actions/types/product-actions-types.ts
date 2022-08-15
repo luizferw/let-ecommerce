@@ -1,5 +1,4 @@
-export type ProductActionType = 'DECREASE_AMOUNT' | 'INCREASE_AMOUNT' | 'SORT_PRODUCTS'
+export type ProductActionType = 'SORT_PRODUCTS' | 'UPDATE_PRODUCT'
 
-export const DECREASE_AMOUNT: ProductActionType = 'DECREASE_AMOUNT'
-export const INCREASE_AMOUNT: ProductActionType = 'INCREASE_AMOUNT'
 export const SORT_PRODUCTS: ProductActionType = 'SORT_PRODUCTS'
+export const UPDATE_PRODUCT: ProductActionType = 'UPDATE_PRODUCT'

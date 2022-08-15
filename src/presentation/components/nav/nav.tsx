@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './nav-styles.scss';
 
+
 const Nav: React.FC = () => {
   const { products} = useSelector((state: State) => state.cart)
 
